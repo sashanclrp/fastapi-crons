@@ -207,8 +207,9 @@ Designed to give developers freedom, flexibility, and control when building prod
 ---
 
 #### Need help? Reach out:
-contact@meharumar.codes
-https://github.com/me-umar
+[Email me][mailto:contact@meharumar.codes]
+
+[github][https://github.com/me-umar]
 
 ## Read Documentation at:
-https://crons.meharumar.docs
+[Documentation][https://crons.meharumar.docs]

@@ -195,7 +195,7 @@ We welcome PRs and suggestions! If you’d like this added to FastAPI officially
 
 ## 📄 License
 
-[Licence][LICENSE]
+[Licence](LICENSE)
 
 ---
 
@@ -207,9 +207,9 @@ Designed to give developers freedom, flexibility, and control when building prod
 ---
 
 #### Need help? Reach out:
-[Email me][mailto:contact@meharumar.codes]
+[Email me](mailto:contact@meharumar.codes)
 
-[github][https://github.com/me-umar]
+[github](https://github.com/me-umar)
 
 ## Read Documentation at:
-[Documentation][https://crons.meharumar.docs]
+[Documentation](https://crons.meharumar.docs)

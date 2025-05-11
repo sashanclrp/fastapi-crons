@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fastapi-crons"
+version = "0.1.2"
+description = "Cron scheduling extension for FastAPI with decorators, async support, Hooks, CLI, and SQLite job tracking."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+  { name="Mehar Umar", email="contact@meharumar.codes" }
+]
+dependencies = [
+  "fastapi>=0.100",
+  "croniter>=1.3.0",
+  "aiosqlite>=0.18.0",
+  "typer[all]>=0.9.0",
+  "pydantic>=2.0.0",
+  "aiohttp"
+]
+requires-python = ">=3.10"
+
+[project.urls]
+"Homepage" = "https://github.com/me-umar/fastapi-crons"
+"Documentation" = "https://crons.meharumar.codes"
+
+[tool.setuptools.packages.find]
+where = ["."]

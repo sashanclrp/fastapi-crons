@@ -24,3 +24,14 @@ class SQLiteStateBackend:
             async with db.execute("SELECT last_run FROM job_state WHERE name=?", (job_name,)) as cursor:
                 row = await cursor.fetchone()
                 return row[0] if row else None
+
+    async def get_all_jobs(self):
+        async with aiosqlite.connect(self.db_path) as db:
+            await db.execute("""
+                CREATE TABLE IF NOT EXISTS job_state (
+                    name TEXT PRIMARY KEY,
+                    last_run TEXT
+                )
+            """)
+            async with db.execute("SELECT name, last_run FROM job_state") as cursor:
+                return await cursor.fetchall()

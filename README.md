@@ -36,11 +36,12 @@ from fastapi_crons import Crons, get_cron_router
 app = FastAPI()
 crons = Crons(app)
 
+app.include_router(get_cron_router())
+
 @app.get("/")
 def root():
     return {"message": "Hello from FastAPI"}
 
-app.include_router(get_cron_router())
 ```
 
 ### 2. Define Cron Jobs
@@ -55,7 +56,22 @@ async def run_daily_task():
     # Distribute daily rewards or any async task
     await some_async_function()
 ```
-
+## Cron Expression overview
+```bash
+┌───────────── minute (0 - 59)
+│ ┌───────────── hour (0 - 23)
+│ │ ┌───────────── day of the month (1 - 31)
+│ │ │ ┌───────────── month (1 - 12)
+│ │ │ │ ┌───────────── day of the week (0 - 6) (Sunday to Saturday)
+│ │ │ │ │
+* * * * *
+```
+#### Examples:
+- `* * * * *`: Every minute
+- `*/15 * * * *`: Every 15 minutes
+- `0 * * * *`: Every hour
+- `0 0 * * *`: Every day at midnight
+- `0 0 * * 0`: Every Sunday at midnight
 ---
 
 ## 🖥️ Cron Monitoring Endpoint
@@ -88,11 +104,21 @@ CREATE TABLE IF NOT EXISTS job_state (
     last_run TEXT
 );
 ```
+### Configuration
+By default, job state is stored in a SQLite database named `cron_state.db` in the current directory. You can customize the database path:
+```python
+from fastapi_cron import Crons, SQLiteStateBackend
+
+# Custom database path
+state_backend = SQLiteStateBackend(db_path="/path/to/my_crons.db")
+crons = Crons(state_backend=state_backend)
+```
 
 ---
 
 ## 🧵 Async + Thread Execution
 
+The scheduler supports both async and sync job functions
 Jobs can be:
 
 * `async def` → run in asyncio loop
@@ -103,11 +129,32 @@ Jobs can be:
 ## 🧪 CLI Support
 
 ```bash
-python -m fastapi_crons.cli list
-python -m fastapi_crons.cli run-job --name=job_name
+# List all registered jobs
+fastapi_cron list
+
+# Manually run a specific job
+fastapi_cron run_job < job_name >
 ```
 
 > **Note**: CLI registry info will be expanded in later versions.
+
+---
+## 🧩 Advanced Features
+
+* Distributed locking via Redis
+* Retry policies
+* Manual run triggers via HTTP
+* Admin dashboard with metrics
+
+### Job Tags
+
+You can add tags to jobs for better organization:
+```python
+@cron_job("*/5 * * * *", tags=["maintenance", "cleanup"])
+async def cleanup_job():
+    # This job has tags for categorization
+    pass
+```
 
 ---
 
@@ -132,15 +179,6 @@ FastAPI App
 
 ---
 
-## 🧩 Advanced Features (coming soon)
-
-* Distributed locking via Redis
-* Retry policies
-* Manual run triggers via HTTP
-* Admin dashboard with metrics
-
----
-
 ## 🧠 Contributing
 
 We welcome PRs and suggestions! If you’d like this added to FastAPI officially, fork the repo, polish it, and submit to FastAPI with a clear integration proposal.
@@ -157,15 +195,20 @@ We welcome PRs and suggestions! If you’d like this added to FastAPI officially
 
 ## 📄 License
 
-[Licence][/LICENSE.txt]
+[Licence][LICENSE]
 
 ---
 
 ## 💬 Credits
 
-Made with ❤️ by Mehar Umar. Designed to give developers freedom, flexibility, and control when building production-grade FastAPI apps.
+Made with ❤️ by Mehar Umar.  
+Designed to give developers freedom, flexibility, and control when building production-grade FastAPI apps.
 
 ---
 
-Need help? Reach out or open an issue on GitHub!
-[Email][mailto:contact@meharumar.codes]
+#### Need help? Reach out:
+contact@meharumar.codes
+https://github.com/me-umar
+
+## Read Documentation at:
+https://crons.meharumar.docs

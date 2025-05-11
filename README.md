@@ -199,13 +199,6 @@ We welcome PRs and suggestions! If you’d like this added to FastAPI officially
 
 ---
 
-## 💬 Credits
-
-Made with ❤️ by Mehar Umar.  
-Designed to give developers freedom, flexibility, and control when building production-grade FastAPI apps.
-
----
-
 #### Need help? Reach out:
 [Email me](mailto:contact@meharumar.codes)
 
@@ -213,3 +206,10 @@ Designed to give developers freedom, flexibility, and control when building prod
 
 ## Read Documentation at:
 [Documentation](https://crons.meharumar.docs)
+---
+## 💬 Credits
+
+Made with ❤️ by Mehar Umar.  
+Designed to give developers freedom, flexibility, and control when building production-grade FastAPI apps.
+
+---

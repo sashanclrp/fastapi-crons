@@ -82,7 +82,7 @@ Once included, visit:
 GET /crons
 ```
 
-You’ll get a full list of jobs with:
+You'll get a full list of jobs with:
 
 * `name`
 * `expr` (cron expression)
@@ -181,7 +181,7 @@ FastAPI App
 
 ## 🧠 Contributing
 
-We welcome PRs and suggestions! If you’d like this added to FastAPI officially, fork the repo, polish it, and submit to FastAPI with a clear integration proposal.
+We welcome PRs and suggestions! If you'd like this added to FastAPI officially, fork the repo, polish it, and submit to FastAPI with a clear integration proposal.
 
 ---
 
@@ -205,7 +205,7 @@ We welcome PRs and suggestions! If you’d like this added to FastAPI officially
 [github](https://github.com/me-umar)
 
 ## Read Documentation at:
-[Documentation](https://crons.meharumar.docs)
+[Documentation](https://crons.meharumar.codes)
 ---
 ## 💬 Credits
 

@@ -1,4 +1,28 @@
-# FastAPI Crons – Developer Guide
+<h1 align="center"><strong>FASTAPI-CRONS</strong></h1>
+
+<p align="center"><em>Effortlessly schedule and manage your background tasks.</em></p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/last%20commit-may-informational?style=flat-square" />
+  <img src="https://img.shields.io/badge/python-100%25-blue?style=flat-square" />
+  <img src="https://img.shields.io/badge/languages-1-blue?style=flat-square" />
+</p>
+
+<br/>
+
+<p align="center"><em>Built with the tools and technologies:</em></p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/-Markdown-000000?style=flat-square&logo=markdown" />
+  <img src="https://img.shields.io/badge/-Typer-000000?style=flat-square&logo=python" />
+  <img src="https://img.shields.io/badge/-TOML-bc4c3f?style=flat-square" />
+  <img src="https://img.shields.io/badge/-FastAPI-009688?style=flat-square&logo=fastapi" />
+  <img src="https://img.shields.io/badge/-Python-306998?style=flat-square&logo=python" />
+  <img src="https://img.shields.io/badge/-AIOHTTP-2c5282?style=flat-square" />
+  <img src="https://img.shields.io/badge/-Pydantic-d6336c?style=flat-square" />
+</p>
+
+<h1 align="center">FastAPI Crons – Developer Guide</h1>
 
 Welcome to the official guide for using `fastapi_crons`, a high-performance, developer-friendly cron scheduling extension for FastAPI. This library enables you to define, monitor, and control scheduled background jobs using simple decorators and provides CLI tools, web-based monitoring, and SQLite-based job tracking.
 
